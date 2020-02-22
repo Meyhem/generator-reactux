@@ -1,0 +1,14 @@
+{
+  "name": "generator-reactux",
+  "version": "1.0.0",
+  "description": "Yeoman react/redux generator",
+  "main": "main.js",
+  "author": "Meyhem",
+  "files": [
+    "app"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^4.5.0"
+  }
+}
