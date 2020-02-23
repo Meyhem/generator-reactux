@@ -1,7 +1,4 @@
 const Generator = require("yeoman-generator");
-const { pascalCase, constantCase } = require("change-case");
-
-const required = x => !!x;
 
 module.exports = class extends Generator {
   constructor(args, opts) {
