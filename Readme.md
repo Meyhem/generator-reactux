@@ -13,9 +13,15 @@ _Generates rootReducer, rootSaga, store & types_
 
 __Generate feature:__
 ```bash
-$ yo reactux:feature <feature>
+$ yo reactux:feature <feature name>
 ```
 _Generates a feature in feature folder, containing actions, reducer, saga and selector. All exposed trough index file._
+
+__Generate page:__
+```bash
+$ yo reactux:page <page name>
+```
+_Generates Redux Connected page component_
 
 ## Project structure
 
