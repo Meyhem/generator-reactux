@@ -28,7 +28,7 @@ module.exports = class extends Generator {
     const featureFolder = this.config.get("featureFolder") || "src/features";
 
     this.fs.copyTpl(
-      this.templatePath("actions.ts"),
+      this.templatePath("actions.ts.ejs"),
       this.destinationPath(
         featureFolder,
         this.answers.featureName,
@@ -41,13 +41,13 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
-      this.templatePath("index.ts"),
+      this.templatePath("index.ts.ejs"),
       this.destinationPath(featureFolder, this.answers.featureName, "index.ts"),
       { ...this.answers }
     );
 
     this.fs.copyTpl(
-      this.templatePath("reducer.ts"),
+      this.templatePath("reducer.ts.ejs"),
       this.destinationPath(
         featureFolder,
         this.answers.featureName,
@@ -60,13 +60,13 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
-      this.templatePath("saga.ts"),
+      this.templatePath("saga.ts.ejs"),
       this.destinationPath(featureFolder, this.answers.featureName, "saga.ts"),
       { ...this.answers }
     );
 
     this.fs.copyTpl(
-      this.templatePath("selectors.ts"),
+      this.templatePath("selectors.ts.ejs"),
       this.destinationPath(
         featureFolder,
         this.answers.featureName,

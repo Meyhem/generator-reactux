@@ -17,22 +17,22 @@ module.exports = class extends Generator {
     const featureFolder = this.config.get("featureFolder") || "src/features";
 
     this.fs.copyTpl(
-      this.templatePath("store.ts"),
+      this.templatePath("store.ts.ejs"),
       this.destinationPath(featureFolder, "store.ts")
     );
 
     this.fs.copyTpl(
-      this.templatePath("types.ts"),
+      this.templatePath("types.ts.ejs"),
       this.destinationPath(featureFolder, "types.ts")
     );
 
     this.fs.copyTpl(
-      this.templatePath("rootReducer.ts"),
+      this.templatePath("rootReducer.ts.ejs"),
       this.destinationPath(featureFolder, "rootReducer.ts")
     );
 
     this.fs.copyTpl(
-      this.templatePath("rootSaga.ts"),
+      this.templatePath("rootSaga.ts.ejs"),
       this.destinationPath(featureFolder, "rootSaga.ts")
     );
   }
