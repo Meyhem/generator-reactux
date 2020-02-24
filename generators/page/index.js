@@ -13,13 +13,13 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const pagesFolder = this.config.get("pagesFolder") || "src/pages";
+    const pages = this.config.get("pages") || "src/pages";
     const pageName = this.options.pageName;
 
     this.fs.copyTpl(
       this.templatePath("page.tsx.ejs"),
       this.destinationPath(
-        pagesFolder,
+        pages,
         snakeCase(pageName),
         `${snakeCase(pageName)}.tsx`
       ),
@@ -31,11 +31,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("index.ts.ejs"),
-      this.destinationPath(
-        pagesFolder,
-        pageName,
-        `index.ts`
-      ),
+      this.destinationPath(pages, pageName, `index.ts`),
       {
         pageName,
         pascalCase

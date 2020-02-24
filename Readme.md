@@ -1,6 +1,9 @@
 # Yeoman generator-reactux
 
-Opinionated Yeoman generator for generating "feature oriented" project structure that uses **redux, redux-saga, typesafe-actions and reselect**.
+Opinionated Yeoman generator for generating "feature oriented" project structure with preconfigured parts.
+
+## Before start
+This generator scaffolds sources with specific packages in mind. Before you start you should install following packages: __redux react-redux redux-saga reselect typesafe-actions__
 
 ## Commands
 
@@ -11,11 +14,15 @@ $ yo reactux:store
 ```
 _Generates rootReducer, rootSaga, store & types_
 
+---
+
 __Generate feature:__
 ```bash
 $ yo reactux:feature <feature name>
 ```
 _Generates a feature in feature folder, containing actions, reducer, saga and selector. All exposed trough index file._
+
+---
 
 __Generate page:__
 ```bash
@@ -23,17 +30,24 @@ $ yo reactux:page <page name>
 ```
 _Generates Redux Connected page component_
 
-## Project structure
+---
 
-![](https://raw.githubusercontent.com/Meyhem/generator-reactux/readme-resources/filestructure.png)
+__Generate component:__
+```bash
+$ yo reactux:component <component name>
+```
+_Generates component_
 
 ## Options
-Generator allows to specify where the "features" folder will live inside the project (by default 'src/features') and can be configured through __.yo-rc.json__
+Generator allows to specify target folders and can be configured through __.yo-rc.json__
 
+Default values for __.yo-rc.json__ are:
 ```json
 {
     "generator-reactux": {
-        "featureFolder": "src/features"
+        "features": "src/features",
+        "pages": "src/pages",
+        "components": "src/components"
     }
 }
 ```

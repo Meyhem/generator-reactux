@@ -11,4 +11,4 @@ export const store = createStore(rootReducer, applyMiddleware(sagaMw))
 
 sagaMw.run(rootSaga)
 
-store.dispatch(dummyAction({property: true}))
+store.dispatch(dummyAction({ property: true }))

@@ -13,7 +13,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const featureFolder = this.config.get("featureFolder") || "src/features";
+    const features = this.config.get("features") || "src/features";
 
     const options = {
       featureName: this.options.featureName
@@ -21,7 +21,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("actions.ts.ejs"),
-      this.destinationPath(featureFolder, options.featureName, "actions.ts"),
+      this.destinationPath(features, options.featureName, "actions.ts"),
       {
         ...options,
         constantCase
@@ -30,13 +30,13 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("index.ts.ejs"),
-      this.destinationPath(featureFolder, options.featureName, "index.ts"),
+      this.destinationPath(features, options.featureName, "index.ts"),
       { ...options }
     );
 
     this.fs.copyTpl(
       this.templatePath("reducer.ts.ejs"),
-      this.destinationPath(featureFolder, options.featureName, "reducer.ts"),
+      this.destinationPath(features, options.featureName, "reducer.ts"),
       {
         ...options,
         pascalCase
@@ -45,13 +45,13 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("saga.ts.ejs"),
-      this.destinationPath(featureFolder, options.featureName, "saga.ts"),
+      this.destinationPath(features, options.featureName, "saga.ts"),
       { ...options }
     );
 
     this.fs.copyTpl(
       this.templatePath("selectors.ts.ejs"),
-      this.destinationPath(featureFolder, options.featureName, "selectors.ts"),
+      this.destinationPath(features, options.featureName, "selectors.ts"),
       { ...options }
     );
   }

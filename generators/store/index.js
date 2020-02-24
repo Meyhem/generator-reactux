@@ -11,26 +11,26 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const featureFolder = this.config.get("featureFolder") || "src/features";
+    const features = this.config.get("features") || "src/features";
 
     this.fs.copyTpl(
       this.templatePath("store.ts.ejs"),
-      this.destinationPath(featureFolder, "store.ts")
+      this.destinationPath(features, "store.ts")
     );
 
     this.fs.copyTpl(
       this.templatePath("types.ts.ejs"),
-      this.destinationPath(featureFolder, "types.ts")
+      this.destinationPath(features, "types.ts")
     );
 
     this.fs.copyTpl(
       this.templatePath("rootReducer.ts.ejs"),
-      this.destinationPath(featureFolder, "rootReducer.ts")
+      this.destinationPath(features, "rootReducer.ts")
     );
 
     this.fs.copyTpl(
       this.templatePath("rootSaga.ts.ejs"),
-      this.destinationPath(featureFolder, "rootSaga.ts")
+      this.destinationPath(features, "rootSaga.ts")
     );
   }
 };
