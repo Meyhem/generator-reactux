@@ -1,9 +1,19 @@
 {
   "name": "generator-reactux",
   "version": "1.0.0",
-  "description": "Yeoman react/redux generator",
+  "description": "Opinionated Yeoman react/redux/typescript feature based structure generator",
+  "keywords": [
+    "react",
+    "redux",
+    "redux-saga",
+    "typescript",
+    "typesafe",
+    "components",
+    "pages"
+  ],
   "main": "index.js",
   "author": "Meyhem",
+  "repository": { "url": "https://github.com/Meyhem/generator-reactux", "type": "git" },
   "files": [
     "generators"
   ],
