@@ -12,8 +12,9 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const src = this.config.get("src") || "src";
     const root = this.config.get("root") || "."
+    const src = this.config.get("src") || "src";
+    const features = this.config.get("features") || "src/features";
 
     this.fs.copyTpl(
       this.templatePath("theme.ts.ejs"),
@@ -38,6 +39,26 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath(".prettierrc.ejs"),
       this.destinationPath(root, ".prettierrc")
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("store.ts.ejs"),
+      this.destinationPath(features, "store.ts")
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("types.ts.ejs"),
+      this.destinationPath(features, "types.ts")
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("rootReducer.ts.ejs"),
+      this.destinationPath(features, "rootReducer.ts")
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("rootSaga.ts.ejs"),
+      this.destinationPath(features, "rootSaga.ts")
     );
   }
 };
