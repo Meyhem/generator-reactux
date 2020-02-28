@@ -21,6 +21,11 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
+      this.templatePath("root.tsx.ejs"),
+      this.destinationPath(src, "root.tsx")
+    );
+
+    this.fs.copyTpl(
       this.templatePath("types.d.ts.ejs"),
       this.destinationPath(src, "types.d.ts")
     );

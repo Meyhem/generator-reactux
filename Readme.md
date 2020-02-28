@@ -5,13 +5,20 @@ Opinionated Yeoman generator for generating "feature oriented" project structure
 ## Before start
 This generator scaffolds sources with specific packages in mind. Before you start you should __install following dependencies:__
 
-_redux react-redux redux-saga reselect typesafe-actions styled-components_
+_redux react-redux redux-saga reselect typesafe-actions styled-components connected-react-router history_
 
-__And devDevdependencies:__
+__and devDevdependencies:__
 
- _@types/styled-components prettier typescript eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import_
+ _@types/styled-components @types/history @types/react-router @types/react-redux prettier typescript eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import_
 
 ## Commands
+
+__Initialize theme, eslint, prettier...__ (Run this once)
+```bash
+$ yo reactux:base
+```
+
+---
 
 __Initialize store:__ (Run this once to generate store structure)
 

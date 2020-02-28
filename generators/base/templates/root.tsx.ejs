@@ -1,0 +1,18 @@
+import React from 'react'
+import { Switch, Route } from 'react-router'
+import { ConnectedRouter } from 'connected-react-router'
+import { Provider } from 'react-redux'
+
+import { history, store } from './features/store'
+
+export const AppRouter = () => {
+  return (
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route path="/" render={() => 'Router works'} />
+        </Switch>
+      </ConnectedRouter>
+    </Provider>
+  )
+}
