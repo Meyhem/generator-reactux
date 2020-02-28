@@ -12,7 +12,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const root = this.config.get("root") || "."
+    const root = this.config.get("root") || ".";
     const src = this.config.get("src") || "src";
     const features = this.config.get("features") || "src/features";
 

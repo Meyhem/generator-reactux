@@ -13,19 +13,10 @@ __and devDevdependencies:__
 
 ## Commands
 
-__Initialize theme, eslint, prettier...__ (Run this once)
+__Initialize theme, eslint, prettier, rootReducer, rootSaga, store & types...__ (Run this once)
 ```bash
 $ yo reactux:base
 ```
-
----
-
-__Initialize store:__ (Run this once to generate store structure)
-
-```bash
-$ yo reactux:store
-```
-_Generates rootReducer, rootSaga, store & types_
 
 ---
 
@@ -65,4 +56,3 @@ Default values for __.yo-rc.json__ are:
     }
 }
 ```
-
