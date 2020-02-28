@@ -7,7 +7,7 @@ import { makeRootReducer } from './rootReducer'
 import { rootSaga } from './rootSaga'
 
 
-const history = createBrowserHistory()
+export const history = createBrowserHistory()
 const sagaMw = createSagaMiddleware()
 const rootReducer = makeRootReducer(history)
 

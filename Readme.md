@@ -5,7 +5,7 @@ Opinionated Yeoman generator for generating "feature oriented" project structure
 ## Before start
 This generator scaffolds sources with specific packages in mind. Before you start you should __install following dependencies:__
 
-_redux react-redux redux-saga reselect typesafe-actions styled-components connected-react-router history_
+_redux react-redux redux-saga reselect typesafe-actions styled-components react-router connected-react-router history_
 
 __and devDevdependencies:__
 
