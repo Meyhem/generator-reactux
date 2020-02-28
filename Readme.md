@@ -18,6 +18,8 @@ __Initialize theme, eslint, prettier, rootReducer, rootSaga, store & types...__ 
 $ yo reactux:base
 ```
 
+_Generates all necessary redux & routing structure. __root.tsx__ will be created as application root with provider & router. You need to render it manually (e.g. in index.tsx)_
+
 ---
 
 __Generate feature:__
@@ -40,7 +42,7 @@ __Generate component:__
 ```bash
 $ yo reactux:component <component name>
 ```
-_Generates component_
+_Generates view scomponent_
 
 ## Options
 Generator allows to specify target folders and can be configured through __.yo-rc.json__
