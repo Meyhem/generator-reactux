@@ -14,7 +14,10 @@
   ],
   "main": "index.js",
   "author": "Meyhem",
-  "repository": { "url": "https://github.com/Meyhem/generator-reactux", "type": "git" },
+  "repository": {
+    "url": "https://github.com/Meyhem/generator-reactux",
+    "type": "git"
+  },
   "files": [
     "generators"
   ],

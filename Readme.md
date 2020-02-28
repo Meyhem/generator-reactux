@@ -3,7 +3,13 @@
 Opinionated Yeoman generator for generating "feature oriented" project structure with preconfigured parts.
 
 ## Before start
-This generator scaffolds sources with specific packages in mind. Before you start you should install following packages: __redux react-redux redux-saga reselect typesafe-actions__
+This generator scaffolds sources with specific packages in mind. Before you start you should __install following dependencies:__
+
+_redux react-redux redux-saga reselect typesafe-actions styled-components_
+
+__And devDevdependencies:__
+
+ _@types/styled-components prettier typescript eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import_
 
 ## Commands
 
@@ -45,6 +51,7 @@ Default values for __.yo-rc.json__ are:
 ```json
 {
     "generator-reactux": {
+        "src": "src",
         "features": "src/features",
         "pages": "src/pages",
         "components": "src/components"
