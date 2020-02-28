@@ -1,0 +1,8 @@
+import { <%= featureName %>Reducer } from '../reducer'
+
+describe('<%= featureName %>Reducer', () => {
+  test('<%= featureName %>Reducer inits', () => {
+    const state = <%= featureName %>Reducer(undefined, {} as any)
+    expect(state).not.toBeUndefined()
+  })
+})

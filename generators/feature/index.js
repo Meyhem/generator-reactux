@@ -1,5 +1,5 @@
 const Generator = require("yeoman-generator");
-const { pascalCase, constantCase } = require("change-case");
+const { pascalCase, constantCase, camelCase } = require("change-case");
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -16,7 +16,7 @@ module.exports = class extends Generator {
     const features = this.config.get("features") || "src/features";
 
     const options = {
-      featureName: this.options.featureName
+      featureName: camelCase(this.options.featureName)
     };
 
     this.fs.copyTpl(
@@ -52,6 +52,12 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath("selectors.ts.ejs"),
       this.destinationPath(features, options.featureName, "selectors.ts"),
+      { ...options }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("reducer.spec.ts.ejs"),
+      this.destinationPath(features, options.featureName, '__test__', "reducer.spec.ts"),
       { ...options }
     );
   }

@@ -42,6 +42,11 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
+      this.templatePath(".editorconfig.ejs"),
+      this.destinationPath(root, ".editorconfig")
+    );
+
+    this.fs.copyTpl(
       this.templatePath("store.ts.ejs"),
       this.destinationPath(features, "store.ts")
     );
