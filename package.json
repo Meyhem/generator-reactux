@@ -1,6 +1,6 @@
 {
   "name": "generator-reactux",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Opinionated Yeoman react/redux/typescript feature based structure generator",
   "keywords": [
     "yeoman-generator",
