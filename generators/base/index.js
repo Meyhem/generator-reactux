@@ -65,5 +65,25 @@ module.exports = class extends Generator {
       this.templatePath("rootSaga.ts.ejs"),
       this.destinationPath(features, "rootSaga.ts")
     );
+
+    this.fs.copyTpl(
+      this.templatePath("language.ts.ejs"),
+      this.destinationPath(src, "language.ts")
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("i18n.main.ts.ejs"),
+      this.destinationPath(src, "i18n", "en", "main.ts")
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("i18n.mainindex.ts.ejs"),
+      this.destinationPath(src, "i18n", "en", "index.ts")
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("i18n.index.ts.ejs"),
+      this.destinationPath(src, "i18n", "index.ts")
+    );
   }
 };

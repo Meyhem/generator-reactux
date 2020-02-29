@@ -1,5 +1,10 @@
 const Generator = require("yeoman-generator");
-const { pascalCase, constantCase, camelCase } = require("change-case");
+const {
+  pascalCase,
+  constantCase,
+  camelCase,
+  paramCase
+} = require("change-case");
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -16,49 +21,51 @@ module.exports = class extends Generator {
     const features = this.config.get("features") || "src/features";
 
     const options = {
-      featureName: camelCase(this.options.featureName)
+      featureFolderName: paramCase(this.options.featureName),
+      featureName: camelCase(this.options.featureName),
+      constantCase,
+      pascalCase
     };
 
     this.fs.copyTpl(
       this.templatePath("actions.ts.ejs"),
-      this.destinationPath(features, options.featureName, "actions.ts"),
-      {
-        ...options,
-        constantCase
-      }
+      this.destinationPath(features, options.featureFolderName, "actions.ts"),
+      options
     );
 
     this.fs.copyTpl(
       this.templatePath("index.ts.ejs"),
-      this.destinationPath(features, options.featureName, "index.ts"),
-      { ...options }
+      this.destinationPath(features, options.featureFolderName, "index.ts"),
+      options
     );
 
     this.fs.copyTpl(
       this.templatePath("reducer.ts.ejs"),
-      this.destinationPath(features, options.featureName, "reducer.ts"),
-      {
-        ...options,
-        pascalCase
-      }
+      this.destinationPath(features, options.featureFolderName, "reducer.ts"),
+      options
     );
 
     this.fs.copyTpl(
       this.templatePath("saga.ts.ejs"),
-      this.destinationPath(features, options.featureName, "saga.ts"),
-      { ...options }
+      this.destinationPath(features, options.featureFolderName, "saga.ts"),
+      options
     );
 
     this.fs.copyTpl(
       this.templatePath("selectors.ts.ejs"),
-      this.destinationPath(features, options.featureName, "selectors.ts"),
-      { ...options }
+      this.destinationPath(features, options.featureFolderName, "selectors.ts"),
+      options
     );
 
     this.fs.copyTpl(
       this.templatePath("reducer.spec.ts.ejs"),
-      this.destinationPath(features, options.featureName, '__test__', "reducer.spec.ts"),
-      { ...options }
+      this.destinationPath(
+        features,
+        options.featureFolderName,
+        "__test__",
+        "reducer.spec.ts"
+      ),
+      options
     );
   }
 };

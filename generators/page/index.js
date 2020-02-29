@@ -1,5 +1,5 @@
 const Generator = require("yeoman-generator");
-const { snakeCase, pascalCase } = require("change-case");
+const { paramCase, pascalCase } = require("change-case");
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -16,26 +16,26 @@ module.exports = class extends Generator {
     const pages = this.config.get("pages") || "src/pages";
     const pageName = this.options.pageName;
 
+    const options = {
+      pageName,
+      pascalCase,
+      paramCase
+    };
+
     this.fs.copyTpl(
       this.templatePath("page.tsx.ejs"),
       this.destinationPath(
         pages,
-        snakeCase(pageName),
-        `${snakeCase(pageName)}.tsx`
+        paramCase(pageName),
+        `${paramCase(pageName)}.tsx`
       ),
-      {
-        pageName,
-        pascalCase
-      }
+      options
     );
 
     this.fs.copyTpl(
       this.templatePath("index.ts.ejs"),
-      this.destinationPath(pages, pageName, `index.ts`),
-      {
-        pageName,
-        pascalCase
-      }
+      this.destinationPath(pages, paramCase(pageName), `index.ts`),
+      options
     );
   }
 };

@@ -2,17 +2,23 @@ import React from 'react'
 import { Switch, Route } from 'react-router'
 import { ConnectedRouter } from 'connected-react-router'
 import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 
 import { history, store } from './features/store'
+import { theme, GlobalStyle } from './theme'
+import './language'
 
 export const AppRoot = () => {
   return (
     <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <Switch>
-          <Route path="/" render={() => 'Router works'} />
-        </Switch>
-      </ConnectedRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <ConnectedRouter history={history}>
+          <Switch>
+            <Route path="/" render={() => 'Router works'} />
+          </Switch>
+        </ConnectedRouter>
+      </ThemeProvider>
     </Provider>
   )
 }

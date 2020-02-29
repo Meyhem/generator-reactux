@@ -1,18 +1,28 @@
+import { createGlobalStyle } from 'styled-components'
+
 export const theme = {
   colors: {
-    primary: '#123',
+    primary: '#000833',
     secondary: '#000',
     info: '#000',
     success: '#000',
     warning: '#000',
     danger: '#000',
+
+    text: '#b4c0ff',
+  },
+  gradients: {
+    primary:
+      'linear-gradient(180deg, rgba(0,8,51,1) 0%, rgba(0,17,107,1) 100%)',
+    primaryMirrorX:
+      'linear-gradient(180deg, rgba(0,17,107,1) 0%, rgba(0,8,51,1) 100%)',
   },
   fontSizes: {
     tiny: '.2rem',
     small: '.5rem',
     normal: '1rem',
-    big: '1.5rem',
-    mega: '2rem',
+    big: '2rem',
+    mega: '5rem',
   },
   breakpoints: {
     xs: 320,
@@ -38,3 +48,9 @@ export function brkbt(min: Breakpoint | null, max: Breakpoint) {
   }px) { ${contentCss} }
   `
 }
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    background: ${({ theme }) => theme.colors.primary}
+  }
+`
