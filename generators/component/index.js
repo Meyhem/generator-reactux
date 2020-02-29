@@ -25,7 +25,7 @@ module.exports = class extends Generator {
       this.templatePath("component.tsx.ejs"),
       this.destinationPath(
         components,
-        options.componentName,
+        paramCase(options.componentName),
         `${paramCase(options.componentName)}.tsx`
       ),
       options
@@ -33,7 +33,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("index.ts.ejs"),
-      this.destinationPath(components, options.componentName, `index.tsx`),
+      this.destinationPath(components, paramCase(options.componentName), `index.tsx`),
       options
     );
   }
