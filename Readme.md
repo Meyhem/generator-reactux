@@ -4,6 +4,12 @@ Opinionated Yeoman generator for generating robust React app structure.
 
 ## Quickstart
 
+Install Yeoman and Reactux generator
+```bash
+$ yarn global add yo
+$ yarn global add generator-reactux
+```
+
 Create new React project using CRA2 if you haven't done yet:
 
 ```bash
@@ -30,7 +36,7 @@ Then scaffold reactux base structure inside project root
 $ yo reactux:base
 ```
 
-Now you have all the required structure and you can start scaffolding __components__, __pages__ and __features__
+Now just render the preconfigured component **&lt;AppRoot/&gt;** from *root.tsx* as your *index.ts* and you can start scaffolding __components__, __pages__ and __features__.
 
 ## Commands
 
