@@ -80,7 +80,7 @@ _Generates view scomponent_
 
 ## Options
 
-Generator allows to specify target folders and can be configured through **.yo-rc.json**
+Generator allows to specify options and target folders and can be configured through **.yo-rc.json**
 
 Default values for **.yo-rc.json** are:
 
@@ -91,7 +91,8 @@ Default values for **.yo-rc.json** are:
     "src": "src",
     "features": "src/features",
     "pages": "src/pages",
-    "components": "src/components"
+    "components": "src/components",
+    "omit-tests": false
   }
 }
 ```

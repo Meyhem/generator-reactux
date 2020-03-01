@@ -1,12 +1,15 @@
 {
   "name": "generator-reactux",
-  "version": "1.0.4",
-  "description": "Opinionated Yeoman react/redux/typescript feature based structure generator",
+  "version": "1.0.5",
+  "description": "Opinionated Yeoman generator for generating robust React app structure.",
   "keywords": [
     "yeoman-generator",
     "react",
     "redux",
     "redux-saga",
+    "jest",
+    "i18n",
+    "styled-components",
     "typescript",
     "typesafe",
     "components",

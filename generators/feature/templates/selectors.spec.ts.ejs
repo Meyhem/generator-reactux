@@ -1,0 +1,9 @@
+import { RootState } from '../../types'
+import { selectSomething } from '../selectors'
+
+describe('<%= featureName %>Selectors', () => {
+const state = {} as RootState
+  test('<%= featureName %>Selectors - selectSomething', () => {
+    expect(selectSomething(state)).toEqual('hello')
+  })
+})

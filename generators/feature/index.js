@@ -19,6 +19,7 @@ module.exports = class extends Generator {
 
   writing() {
     const features = this.config.get("features") || "src/features";
+    const omitTests = !!this.config.get("omit-tests");
 
     const options = {
       featureFolderName: paramCase(this.options.featureName),
@@ -57,15 +58,40 @@ module.exports = class extends Generator {
       options
     );
 
-    this.fs.copyTpl(
-      this.templatePath("reducer.spec.ts.ejs"),
-      this.destinationPath(
-        features,
-        options.featureFolderName,
-        "__test__",
-        "reducer.spec.ts"
-      ),
-      options
-    );
+    !omitTests &&
+      this.fs.copyTpl(
+        this.templatePath("reducer.spec.ts.ejs"),
+        this.destinationPath(
+          features,
+          options.featureFolderName,
+          "__test__",
+          "reducer.spec.ts"
+        ),
+        options
+      );
+
+    !omitTests &&
+      this.fs.copyTpl(
+        this.templatePath("selectors.spec.ts.ejs"),
+        this.destinationPath(
+          features,
+          options.featureFolderName,
+          "__test__",
+          "selectors.spec.ts"
+        ),
+        options
+      );
+
+    !omitTests &&
+      this.fs.copyTpl(
+        this.templatePath("saga.spec.ts.ejs"),
+        this.destinationPath(
+          features,
+          options.featureFolderName,
+          "__test__",
+          "saga.spec.ts"
+        ),
+        options
+      );
   }
 };
