@@ -15,6 +15,7 @@
     "components",
     "pages"
   ],
+
   "main": "index.js",
   "author": "Meyhem",
   "repository": {

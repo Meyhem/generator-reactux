@@ -4,13 +4,13 @@ Opinionated Yeoman generator for generating robust React app structure.
 
 ## Quickstart
 
-Install Yeoman and Reactux generator
+**Install Yeoman and Reactux generator**
 ```bash
 $ yarn global add yo
 $ yarn global add generator-reactux
 ```
 
-Create new React project using CRA2 if you haven't done yet:
+**Create new React project using CRA2 if you haven't done yet:**
 
 ```bash
 $ yarn create react-app --template typescript <project name>
@@ -31,7 +31,7 @@ $ yarn add redux react-redux redux-saga reselect typesafe-actions styled-compone
 $ yarn add --dev @types/styled-components @types/history @types/react-router @types/react-redux prettier typescript eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import
 ```
 
-Then scaffold reactux base structure inside project root
+**Then scaffold reactux base structure inside project root**
 ```base
 $ yo reactux:base
 ```
